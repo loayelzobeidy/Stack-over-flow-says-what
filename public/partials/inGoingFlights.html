@@ -1,0 +1,26 @@
+<!-- <div class="col-sm-3"><label style="font-size: 20px">{{f}}</h3></label></div> -->
+  <h1 class="text-center" style="font: bold; color: #C71585; font-size: 30px; font-family:Lobster">Returning Back</h1>
+
+ <div style=" margin-bottom: 22%;">
+ 
+   <table class="table table-inverse" id="myTable" ;style ="width :100%;">
+  <tr class="clickable-row">
+    <td style="font: bold; color: #C71585; font-size: 25px; font-family:Lobster">Flight</td>
+      <td><span style="font: bold; color: #C71585; font-size: 25px; font-family:Lobster">{{ selectedClass }}</span></td>
+  </tr>
+  
+  <tr class="clickable-row" ng-repeat = "flight in inflights">
+    <td><form style="font-size: 17px">
+    Airline : {{ flight.Airline }}<br>
+    Flight Number : {{ flight.flightNumber }}<br>
+    Destination :   {{ flight.destination }}<br>
+    Origin :   {{ flight.origin }}<br>
+    Departure Date :   {{ flight.departureDateTime | date:'yyyy-MM-dd hh:mm'}}<br>
+    Arrival Date :   {{ flight.arrivalDateTime | date:'yyyy-MM-dd hh:mm'}}<br>
+    </form></td>
+    <td><button ng-click = "bookIngoing(flight,flight.cost,'Business')" type="button" class="btn btn-success">{{flight.cost}}$</button></td>
+
+  </tr>
+
+</table>
+</div>
